@@ -1,0 +1,23 @@
+services:
+  # Web Service (PHP)
+  - type: web
+    name: qloapps
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PHP_VERSION
+        value: 8.2
+      - key: DATABASE_URL
+        fromDatabase:
+          name: qloapps-db
+          property: connectionString
+    healthCheckPath: /
+    
+databases:
+  # MySQL Database
+  - name: qloapps-db
+    databaseName: qloapps
+    user: qloapps_user
+    plan: free
+
