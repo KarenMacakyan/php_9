@@ -1,11 +1,15 @@
 {
     "require": {
-        "php": ">=5.4 <8.0",
+        "php": "^8.1 || ^8.2 || ^8.3 || ^8.4",
         "ext-simplexml": "*",
         "ext-curl": "*",
         "ext-gd": "*",
         "ext-zip": "*",
-        "ext-soap": "*"
+        "ext-soap": "*",
+        "ext-pdo_mysql": "*",
+        "ext-mbstring": "*",
+        "ext-xml": "*",
+        "ext-dom": "*"
     },
     "name": "webkul/qloapps",
     "description": "QloApps is an Open-source and Free hotel reservation system and booking engine. With the help of QloApps, you can launch your hotel booking website without any cost and take & manage online bookings.",

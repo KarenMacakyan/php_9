@@ -1,9 +1,15 @@
 [phases.setup]
-nixPkgs = ["php82", "php82Extensions.pdo_mysql", "php82Extensions.curl", "php82Extensions.gd", "php82Extensions.zip", "php82Extensions.soap", "php82Extensions.mbstring", "php82Extensions.xml", "php82Extensions.simplexml", "php82Extensions.dom"]
+nixPkgs = ["php82", "php82Extensions.pdo_mysql", "php82Extensions.curl", "php82Extensions.gd", "php82Extensions.zip", "php82Extensions.soap", "php82Extensions.mbstring", "php82Extensions.xml", "php82Extensions.simplexml", "php82Extensions.dom", "php82Extensions.openssl"]
 
 [phases.install]
-cmds = ["echo 'Installing dependencies...'"]
+cmds = [
+  "echo 'Checking PHP version...'",
+  "php -v",
+  "echo 'Creating required directories...'",
+  "mkdir -p cache/smarty/cache cache/smarty/compile log img/tmp",
+  "chmod -R 777 cache log img/tmp"
+]
 
 [start]
-cmd = "php -S 0.0.0.0:${PORT:-8080} -t ."
+cmd = "php -S 0.0.0.0:${PORT:-8080} -t . index.php"
 
