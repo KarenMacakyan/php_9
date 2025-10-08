@@ -1,0 +1,91 @@
+# QloApps .gitignore
+
+# Конфигурационные файлы с паролями
+config/settings.inc.php
+config/xml/*
+!config/xml/index.php
+
+# Кэш
+cache/smarty/cache/*
+cache/smarty/compile/*
+cache/cachefs/*
+cache/tcpdf/*
+cache/purifier/*
+!cache/**/.htaccess
+!cache/**/index.php
+
+# Логи
+log/*
+!log/index.php
+*.log
+
+# Загруженные файлы
+upload/*
+!upload/index.php
+download/*
+!download/index.php
+
+# Изображения продуктов (можно раскомментировать если не нужно версионировать)
+# img/p/*
+# img/c/*
+# img/cms/*
+# img/l/*
+# img/co/*
+# img/s/*
+# img/m/*
+# img/su/*
+# img/t/*
+# img/tmp/*
+
+# Бэкапы
+admin/backups/*
+!admin/backups/index.php
+admin/autoupgrade/*
+!admin/autoupgrade/index.php
+
+# Директории импорта/экспорта
+admin/import/*
+!admin/import/index.php
+admin/export/*
+!admin/export/index.php
+
+# Системные файлы
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+*.swp
+*.swo
+
+# IDE
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+nbproject/
+
+# Composer
+/vendor/
+composer.lock
+
+# Node modules (если используется)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Временные файлы
+*.tmp
+*.bak
+*.cache
+
+# Папка установки (после установки нужно удалить)
+# install/
+# install-dev/
+
+# Переводы (можно раскомментировать)
+# translations/*.gzip
+# translations/*.php
